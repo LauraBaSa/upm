@@ -1,0 +1,76 @@
+<ion-view title="Comentarios Alumno" id="ComentariosAlum">
+    <ion-nav-bar class="bar-balanced">
+        <ion-nav-back-button> </ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content padding="true" class="has-header">
+        <div class="list">
+            <!--Crear check box (Grupos )-->
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Grupo
+                </div>
+                <select>
+                    <option>15701</option>
+                    <option selected>15702</option>
+                    <option>14784</option>
+                </select>
+            </label>
+        </div>
+
+        <!--Text area para ingresar el comentario-->
+        <label class="item item-input">
+            <textarea placeholder="ingresar el comentario" id="txt_comentario"></textarea>
+        </label>
+        <!--boton ingresar tu comentario -->
+        <button class="button button-positive button-block" id="btn_comentar">Subir comentario </button>
+      <!--boton para ver comentarios -->
+      <button class="button button-positive button-block" id="btn_consulta">Ver  comentarios </button>
+        <!-- inicia card para ver los comentarios-->
+        <div class="list card">
+
+            <div class="item">
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consectetur consequuntur dolorem, error, et impedit in labore libero maxime,
+                    odit placeat quasi quibusdam soluta suscipit ullam voluptatem. Est laudantium quia vitae.
+                </p>
+                <p>
+                    <a href="#" class="subdued">1 Like</a>
+                    <a href="#" class="subdued">19/10/2016</a>
+                    <a href="#" class="subdued">13:00 hrs.</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="list card">
+
+            <div class="item">
+                <h2>Garces Sandoval Ivan</h2>
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consectetur consequuntur dolorem, error, et impedit in labore libero maxime,
+                    odit placeat quasi quibusdam soluta suscipit ullam voluptatem. Est laudantium quia vitae.
+                </p>
+                <p>
+                    <a href="#" class="subdued">1 Like</a>
+                    <a href="#" class="subdued">19/10/2016</a>
+                    <a href="#" class="subdued">13:00 hrs.</a>
+                </p>
+            </div>
+
+        </div>
+
+
+    </ion-content>
+</ion-view>

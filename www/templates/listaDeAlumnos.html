@@ -1,0 +1,38 @@
+<ion-view title="Lista de alumnos" >
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+    </button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <div class="list">
+      <!--Crear check box (Grupos )-->
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Grupo
+        </div>
+        <select>
+          <option>15701</option>
+          <option selected>15702</option>
+          <option>14784</option>
+        </select>
+      </label>
+
+    </div>
+    <div class="list" ng-repeat="item in ListaGrupos">
+
+      <ion-item  detail-push class="item item-divider item-balanced item-text-wrap item-button-right">
+        Grupo: {{item.grupo}} "{{item.materia}}"
+        <button class="button button-balanced " ng-click="mostrar()">
+          <i class="icon ion-ios-arrow-down"> </i>
+        </button>
+      </ion-item>
+
+      <a class="item item-text-wrap detail-push" ng-repeat="item in ListaA track by $index" >
+        <!--{{item.nombres.nombre}} {{item.nombres.apellidoP}} {{item.nombres.apellidoM}}-->
+        {{item.ListaA}}
+      </a>
+    </div>
+
+
+  </ion-content>
+</ion-view>

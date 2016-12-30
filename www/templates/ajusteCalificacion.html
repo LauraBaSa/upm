@@ -1,0 +1,62 @@
+<ion-view title="Puntuación" id="ajusteCalificacion">
+    <ion-content padding="true" class="has-header">
+        <!-- Crear una lista para agregar tod el contenido dentro de ella-->
+        <div class="list">
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Grupo
+                </div>
+                <select>
+                    <option>15701</option>
+                    <option selected>1508</option>
+                    <option>15702</option>
+                    <option>15698</option>
+                </select>
+            </label>
+
+        </div>
+
+        <!--  Lista de los puntajes  -->
+        <div class="list">
+            <div class="item item-divider item-balanced">
+                Puntuación actual
+            </div>
+            <a class="item" href="#">
+                Exámen: 0.1pts
+            </a>
+            <a class="item" href="#">
+                Practicas: 0.01 pts
+            </a>
+            <a class="item" href="#">
+                Tareas: 1 pts
+            </a>
+            <a class="item" href="#">
+                Participación: 0.05 pts
+            </a>
+        </div>
+        <!--check box de los rubros-->
+        <div class="list">
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Rubros
+                </div>
+                <select>
+                    <option>Participación</option>
+                    <option selected>Exámen</option>
+                    <option>Tareas</option>
+                    <option>Prácticas</option>
+                </select>
+            </label>
+
+        </div>
+        <!-- Texto para introducir nueva puntuación -->
+        <a class="item" href="#">
+            <!--  nueva puntuación -->
+            <input type="text" id="txt_NuevaPuntuación" name="txt_NuevaPuntuacion" placeholder="Nueva puntuación" >
+        </a>
+        <button class="button button-positive button-block" id="btn_modificar" name="btn_modificar" >Modificar </button>
+
+    </ion-content>
+</ion-view>

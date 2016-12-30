@@ -1,0 +1,88 @@
+<ion-view title="ACOMODAR CÓDIGO" id="codigoProf">
+    <ion-content padding="true" class="has-header">
+
+        <!--Select para los grupos-->
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Grupo
+                </div>
+                <select>
+                    <option>15701</option>
+                    <option selected>15789</option>
+                    <option>15893</option>
+                    <option>14589</option>
+                </select>
+            </label>
+        </div>
+        <!--Select para los elegir el código-->
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Elegir código
+                </div>
+                <select>
+                    <option selected >Código 1</option>
+                    <option >Código 2</option>
+                    <option>Código 3</option>
+                    <option>Código 4</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- Mostrar el código seleccionado por el combo box-->
+        <div class="list">
+            <div class="item item-divider item-balanced">
+                Código1
+            </div>
+            <a class="item" href="#">
+
+                public class HelloWorld {
+            </a>
+            <a class="item " href="#">
+
+                public static void main(String[] args) {
+            </a>
+            <a class="item" href="#">
+
+                System.out.println("Hello, World");
+            </a>
+            <a class="item" href="#">
+                }
+                }
+            </a>
+        </div>
+
+        <!--btn_consultar   btn_comenzar-->
+        <div class="button-bar">
+            <button class="button button-positive  button-block" id="btn_consultar">Resultado</button>
+            <button class="button button-positive  button-block" id="btn_comenzar">Comenzar</button>
+        </div>
+
+        <!--Se muestra una lista con los resultados-->
+        <div class="list">
+            <div class="item item-divider item-balanced">
+                Resultados
+            </div>
+            <a class="item" href="#">
+                Ana Laura Bautista Sandoval<br>  +0.0 pts. Exámen
+            </a>
+            <a class="item" href="#">
+                Morelos Coronado Rogelio<br>   +0.10pts Exámen
+            </a>
+            <a class="item " href="#">
+                Orozco Navarro Fabián<br>   +0.10pts Exámen
+            </a>
+            <a class="item" href="#">
+                Rodriguez Ramirez Omar<br>   +0.10pts Exámen
+            </a>
+            <a class="item" href="#">
+                Bautista Sandoval Ana Laura<br>   +0.10pts Exámen
+            </a>
+            <a class="item" href="#">
+                Sanchez Rodriguez Uriel<br>   +0.10pts Exámen
+            </a>
+        </div>
+
+    </ion-content>
+</ion-view>

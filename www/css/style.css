@@ -1,0 +1,102 @@
+/* Diseño de las imagenes de los botones*/
+.imagenActividad{
+  border-radius: 500px;
+  overflow: hidden;
+  width:50%;
+  height:50%;
+  margin: 0 auto;
+  position: relative;
+}
+/*Diseño de todas las imagenes de templates/NuevaActividad*/
+.imagen{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+
+}
+/*Diseño de los titulos con los nombres de las actividades (Templates/nuevaActividad) */
+.tituloActividad{
+  overflow: hidden;
+  width:50%;
+  height:50%;
+  margin: 0.1em;
+  font-size:1.45em ;
+  color: #00B2A6;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+@media all and (max-width: 1200px) {
+  .tituloActividad{
+    overflow: hidden;
+    width:50%;
+    height:50%;
+    margin: 0.5em;
+    font-size:4.45em ;
+    color: #00B2A6;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+}
+@media all and (max-width: 850px) {
+  .tituloActividad{
+    overflow: hidden;
+    width:50%;
+    height:50%;
+    margin: 0.5em;
+    font-size:3.5em ;
+    color: #00B2A6;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 672px) {
+  .tituloActividad{
+    overflow: hidden;
+    width:50%;
+    height:50%;
+    margin: 0.5em;
+    font-size:2.5em ;
+    color: #00B2A6;
+    text-align: center;
+    padding-bottom: 12px;
+  }
+}
+@media all and (max-width: 520px) {
+  .tituloActividad{
+    overflow: hidden;
+    width:50%;
+    height:50%;
+    margin: 0.5em;
+    font-size:1.90em ;
+    color: #00B2A6;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .tituloActividad{
+    overflow: hidden;
+    width:50%;
+    height:50%;
+    margin: 0.1em;
+    font-size:1.45em ;
+    color: #00B2A6;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+}
+
+
