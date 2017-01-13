@@ -24,6 +24,19 @@
   width: 100%;
 
 }
+
+/*Formato de los textos y los subtitulos*/
+.subtitulo{
+  font-size: 1.75em;
+  text-align: center;
+  margin: 0.5em auto;
+}
+
+.texto{
+  font-size: 1em;
+  text-align: left;
+  margin: 1em auto;
+}
 /*Diseño de los titulos con los nombres de las actividades (Templates/nuevaActividad) */
 .tituloActividad{
   overflow: hidden;

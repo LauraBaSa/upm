@@ -9,22 +9,20 @@
    <!-- <form ng-submit="submit()">-->
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="data.username">
+          <span class="input-label">Correo</span>
+          <input required type="text" ng-model="data.username">
         </label>
         <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="data.password">
+          <span class="input-label">Contraseña</span>
+          <input required type="password" ng-model="data.password">
         </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit" ui-sref="app.inicio">Log in</button><!--ng-click="submit()"-->
+          <button class="button button-block button-positive" type="submit" ng-click="submit()" >Log in</button><!-- ui-sref="app.inicio"-->
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit" ui-sref="app.registro">Registrarse</button>
         </label>
       </div>
-
     <!--</form>-->
-
   </ion-content>
 </ion-modal-view>

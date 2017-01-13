@@ -1,78 +1,106 @@
 angular.module('starter.controllers', [])
 
-/*.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+  //////////////////////////////Factory para enviar el ID del alumno y del profesor///////////////////////////
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-    if($scope.loginData.username=='ana' && $scope.loginData.password=='123'){
+/*  .factory('MisDatos', function($http){
 
-    }
+        return {
+          idAlumno: function(idAlum){
+            return idAlum;
+          }
+        }
+  })*/
 
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})*/
 
+  //////////////////////////////////////////////////////////////////////////////////////////
   .controller('AppCtrl', function($scope, $http) {
     $scope.data = {};
-    $scope.prueba = function() {
 
-      alert('es la funcion correcta');
-
-    };
-    $scope.submit = function(){
-      var link = 'http://nikola-breznjak.com/_testings/ionicPHP/api.php';
-
-      $http.post(link, {username : $scope.data.username, password :$scope.data.password}).then(function (res){
-        $scope.response = res.data;
-        alert($scope.response);
-      });
-    }
   })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+//  ///////////////////////////////CONTROLLERS DE LOGIN//////////////////////////////////////////////////
+  // //////////////////////////////// codigo para el logout  :::window.localStorage.removeItem("username");//////////////////////////////////
+  .controller('PlaylistCtrl', ['$scope', '$stateParams','$http','$state',
+    function($scope, $stateParams, $http, $state) {
+      $scope.submit = function(){
+        var link = ' https://www.serviciosocial.xyz/api/usuario.php?url=login';
 
-.controller('PlaylistCtrl', ['$scope', '$stateParams','$http',
-  function($scope, $stateParams, $http) {
-    $scope.data = {};
-    $scope.prueba = function() {
+        $http.post(link, {correo : $scope.data.username, contrasena :$scope.data.password}).then(function (res){
+          //$scope.response tiene la información que envía el servidor
+          $scope.response = res.data;
+          var length1 =$scope.response.length;
+console.log($scope.response);
+          //alert($scope.response[1].tipoUsuario);
+          //si la longitud del objeto que se recibe guardada en la variable "lenght" es 1
+          // quiere decir que el usuario no está en la base de datos
+          // en este caso se enviará un mensaje de error
+          if(length1==1){
+            alert('Error: el usuario no existe. Intentelo de nuevo');
+          }else if(length1==2){// si la longitud del objeto recibido es igual a 2, entonces el usuario si existe
+            // si el parametro de tipoUsuario = '1' se redirecciona al inicio del alumno
+            if( $scope.response[1].tipoUsuario == '1' ){
+              $state.go('app.inicioA') ;
+              var idUser1 = $scope.response[1].idalumno;
+              window.localStorage.setItem("idUser", idUser1);
+              console.log(idUser1);
+              //si el parametro de tipoUsuario = '2' se redirecciona al profesor
+            }else if($scope.response[1].tipoUsuario == '2'){
+              $state.go('app.inicio') ;
+              var idUser = $scope.response[1].idProfesor;
+              window.localStorage.setItem("idUser", idUser);
+              console.log(idUser);
+            }
+          }else if(length1<2){// si se recibe más de dos objetos manda un error
+            alert('Error: el usuario no existe. Intentelo de nuevo');
+          }
+        });
+      }
+    }])
 
-      alert('es la funcion correcta');
 
-    };
-    $scope.submit = function(){
-      var link = 'https://www.serviciosocial.xyz/usuario-ionic.php?url=login';
+  .controller('registroCtrl', ['$scope', '$stateParams','$http',
+    function ($scope, $stateParams, $http) {
 
-      $http.post(link, {correo : $scope.data.username, contrasena :$scope.data.password}).then(function (res){
-        $scope.response = res.data;
-        alert($scope.response);
-        console.log($scope.response);
+      $scope.registrar = function(){
+        var link = ' https://www.serviciosocial.xyz/api/usuario.php?url=insertar';
 
-      });
-    }
-}])
+        $http.post(link, {correo : $scope.data.correo, contrasena :$scope.data.contrasena, nombre : $scope.data.nombre,
+          apellidoP : $scope.data.apellidoP, apellidoM : $scope.data.apellidoM}).then(function (res){
+          //$scope.response tiene la información que envía el servidor
+            $scope.response = res.data;
+          console.log($scope.response);
 
-//    /////////////////////////////AQUI VAN LOS CONTROLLERS DEL MENU////////////////////////////
+        });
+
+      }
+
+
+
+
+    }])
+  //    /////////////////////////////AQUI VAN LOS CONTROLLERS DEL INICIO DEL ALUMNO Y DEL PROFESOR////////////////////////////
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
   .controller('inicioCtrl', ['$scope', '$stateParams',
     function ($scope, $stateParams) {
 
+// la función siguiente es para probar si es el controlador correcto de cada vista
+      $scope.data = {};
+      $scope.prueba = function() {
+        alert('es la funcion inicio Profesor');
+      };
+
     }])
+
+  .controller('inicioACtrl', ['$scope', '$stateParams','$state',
+    function ($scope, $stateParams, $state) {
+// la función comentada es para probar si es el controlador correcto de cada vista
+      $scope.data = {};
+      $scope.prueba = function() {
+        alert('inicioACtrl');
+      };
+    }])
+
 
 
   //    /////////////////////////////AQUI VAN LOS CONTROLLERS DEL MENU DEL PROFESOR////////////////////////////
@@ -103,36 +131,6 @@ angular.module('starter.controllers', [])
           };
         });
     }])
-
-/*  .controller('listaDeAlumnosCtrl', ['$scope', '$state','$http',
-    function ($scope, $state, $http) {
-      //obtener los datos de el archivo de json
-      $http.get('js/data.json')
-      //añadir una funcion cuando la funcion termine (ajax)los parámetros que llegan son los datos que se han cargado
-        .success(function(data){
-          //$scope. ayuda a enviar cualquier dato a la plantilla
-          $scope.Lista=data.Lista;
-          console.debug(data.Lista);
-
-         /!* var length=$scope.Lista.length;
-          for (i = 0; i < length; i++){
-            for (j = 0 ;j < $scope.Lista[i].nombres.length; j++) {
-              console.log($scope.Lista[i].nombres[j].nombre); //console.log() es mejor :)
-
-            }
-          }*!/
-
-
-
-          $scope.listaNombres = function() {
-            console.log('Doing login', $scope.loginData);
-
-
-          };
-
-        });
-    }])*/
-
   .controller('cDigosDeGruposCtrl', ['$scope', '$stateParams',
     function ($scope, $stateParams) {
 
@@ -153,20 +151,21 @@ angular.module('starter.controllers', [])
 
     }])
 
-  .controller('ajustesCtrl', ['$scope', '$stateParams',
-    function ($scope, $stateParams) {
-
-
-    }])
-
   .controller('acercaDeNosotrosCtrl', ['$scope', '$stateParams',
     function ($scope, $stateParams) {
 
 
     }])
 
+  .controller('ajustesCtrl', ['$scope', '$stateParams',
+    function ($scope, $stateParams) {
+      $scope.data = {};
+      $scope.prueba = function() {
 
+        //alert('es la funcion correcta AjustesCtrl');
 
+      };
+    }])
 
   //    /////////////////////////////AQUI VAN LOS CONTROLLERS DE LOS AJUSTES DEL PROFESOR////////////////////////////
   // //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -190,12 +189,51 @@ angular.module('starter.controllers', [])
     function ($scope, $stateParams) {
     }])
 
-  .controller('ajusteNuevoHorarioCtrl', ['$scope', '$stateParams',
-    function ($scope, $stateParams) {
-    }])
+  .controller('ajusteNuevoHorarioCtrl', ['$scope', '$stateParams', '$http',
+    function ($scope, $stateParams, $http) {
+      // la función siguiente es para probar si es el controlador correcto de cada vista
+      $scope.data = {};
+      // console.log(datos.mensaje);
+      // las siguientes variables es el dato que se obtiene de los combobox
+      var grupo = document.getElementById('cmb_grupo').value;
+      var cicloEscolar = document.getElementById('cmb_cicloEscolar').value;
+      var materia = document.getElementById('cmb_materia').value;
+      var idUsuario=window.localStorage.getItem("idUser");
 
-  .controller('ajusteNuevoHorarioCtrl', ['$scope', '$stateParams',
-    function ($scope, $stateParams) {
+      var link = ' https://www.serviciosocial.xyz/api/materia.php?url=buscar';
+      $http.post(link).then(function (res){
+        //$scope.response tiene la información que envía el servidor
+        $scope.response1 = res.data;
+        console.log($scope.response1);
+      });
+
+
+
+
+      // funcion para registrar una nueva clase
+      $scope.registra = function(){
+        // se asigna una URL en dónde está la función que se usará, url=NombreDeLaFuncion
+        var link = ' https://www.serviciosocial.xyz/api/grupo.php?url=insertar';
+        $http.post(link, {claveGrupo : grupo, idProfesor : idUsuario , ciclo : cicloEscolar, materia : materia}).then(function (res){
+          //$scope.response tiene la información que envía el servidor
+          $scope.response = res.data;
+          console.log($scope.response);
+        });
+      }
+      $scope.prueba1 = function() {
+        /*var link = ' https://www.serviciosocial.xyz/api/grupo.php?url=buscar';
+        $http.post(link, {claveGrupo : cmb_grupo}).then(function (res){
+          //$scope.response tiene la información que envía el servidor
+          $scope.response1 = res.data;
+          console.log($scope.response1);
+        });*/
+
+
+      };
+
+
+
+
     }])
 
   .controller('ajusteHorarioHoraFinalCtrl', ['$scope', '$stateParams',
@@ -304,50 +342,24 @@ angular.module('starter.controllers', [])
 
     }])
 
-  //  ///////////////////////////////CONTROLLERS DE LOGIN//////////////////////////////////////////////////
-  // //////////////////////////////////////////////////////////////////
-  /*
-   .controller('loginCtrl',['$scope',
-   function($scope){
-   $scope.login={
-   usuario :'',
-   clave:''
-   };
-   $scope.ingresar=function(){
-   alert($scope.login.usuario+" "+$scope.login.clave);
-   };
-   }
-   ]);*/
+/*$scope.submit = function(){
+  var link = ' https://www.serviciosocial.xyz/api/usuario.php?url=login';
 
-  .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+  $http.post(link, {correo : $scope.data.username, contrasena :$scope.data.password}).then(function (res){
+    //$scope.response tiene la información que envía el servidor
+    $scope.response = res.data;
+    var length =$scope.response.length;
+    //alert($scope.response[1].tipoUsuario);
+    //console.log($scope.response)
 
-    $scope.loginData = {};
+  });
+}*/
 
-    // Create the login modal that we will use later
-    $ionicModal.fromTemplateUrl('templates/Login.html', {
-      scope: $scope
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
+// la función comentada es para sprobar si es el controlador correcto de cada vista
+/*$scope.data = {};
+ $scope.prueba = function() {
 
-    // Open the login modal
-    $scope.login = function() {
-      $scope.modal.show();
-    };
+ alert('es la funcion correcta');
 
-    // Perform the login action when the user submits the login form
-    $scope.doLogin = function() {
-      console.log('Doing login', $scope.loginData);
+ };*/
 
-      // Simulate a login delay. Remove this and replace with your login
-      // code if using a login system
-      $timeout(function() {
-        $scope.closeLogin();
-      }, 1000);
-    };
-  })
-
-  .controller('registroCtrl', ['$scope', '$stateParams',
-    function ($scope, $stateParams) {
-
-    }])

@@ -1,30 +1,31 @@
 <ion-modal-view>
   <ion-header-bar>
     <h1 class="title">Registro</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
   </ion-header-bar>
   <ion-content>
     <div class="list">
       <label class="item item-input">
         <span class="input-label">Nombre</span>
-        <input type="text">
+        <input required type="text" ng-model="data.nombre">
       </label>
       <label class="item item-input">
         <span class="input-label">Apellido Paterno</span>
-        <input type="text" >
+        <input required type="text" ng-model="data.apellidoP" >
       </label>
       <label class="item item-input">
         <span class="input-label">Apellido Materno</span>
-        <input type="text" >
+        <input required type="text" ng-model="data.apellidoM">
       </label>
       <label class="item item-input">
         <span class="input-label">Correo electrónico</span>
-        <input type="email" >
+        <input required type="email" ng-model="data.correo">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Contraseña</span>
+        <input required type="password" ng-model="data.contrasena">
       </label>
       <label class="item">
-        <button class="button button-block button-positive" type="submit">Registrarse</button>
+        <button class="button button-block button-positive" type="submit" ng-click="registrar()">Registrarse</button>
       </label>
       <label class="item">
         <button class="button button-block button-positive" type="submit" ui-sref="app.playlists">Login</button>

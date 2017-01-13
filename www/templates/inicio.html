@@ -4,16 +4,28 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <div class="card">
-      <div class="item item-text-wrap">
-        <div class="subtitulo">Próxima clase </div>
-        <div class="texto"> Hora de clase:  </div>
-        <div class="texto"> Materia: Programación Orientada a objetos</div>
-        <div class="texto">Grupo: 15101</div>
-        <div class="texto">Promedio de asistencia: 80%</div>
-        <div class="subtitulo">La clase comienza en</div>
-        <div class="subtitulo" id="txt_tiempofalta">2 hrs 00 min</div>
-        <button class="button button-positive button-block" id ="btn_inicioClase">Comenzar clase</button>
-      </div>
+    <div class="list">
+        <a class="item texto item">Próxima clase </a>
+        <a class="item texto item"> Hora de clase:  </a>
+        <a class="item texto item"> Materia: Programación Orientada a objetos</a>
+        <a class="item texto item">Grupo: 15101</a>
+        <a class="item texto item">Promedio de asistencia: 80%</a>
+        <a class="item subtitulo">La clase comienza en</a>
+        <a class="item subtitulo" id="txt_tiempofalta">2 hrs 00 min</a>
+        <a class="list">
+          <!--Crear check box (Grupos )-->
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Minutos de tolerancia
+            </div>
+            <select>
+              <option>5</option>
+              <option selected>10</option>
+              <option>15</option>
+            </select>
+          </label>
+        </a>
+        <button class="button button-positive button-block" id ="btn_inicioClase" ng-click="prueba()">Comenzar clase</button>
+    </div>
   </ion-content>
 </ion-view>

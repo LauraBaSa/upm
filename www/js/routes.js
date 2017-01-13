@@ -35,7 +35,8 @@
          url: "/inicioProf",
          views: {
            'appContent' :{
-             templateUrl: "templates/inicio.html"
+             templateUrl: "templates/inicio.html",
+             controller:'inicioCtrl'
            },
            'menuList': {
              templateUrl : "templates/menuProf.html"
@@ -47,7 +48,8 @@
          url: "/inicioAlum",
          views: {
            'appContent' :{
-             templateUrl: "templates/inicioA.html"
+             templateUrl: "templates/inicioA.html",
+             controller:'inicioACtrl'
            },
            'menuList': {
              templateUrl : "templates/menuAlum.html"
@@ -86,8 +88,6 @@
          }
        })
 
-
-
        .state('app.comentarioProfVer', {
          url: "/comentarioProfVer",
          views: {
@@ -100,7 +100,6 @@
            }
          }
        })
-
 
        .state('app.horario', {
          url: "/horario",
@@ -115,7 +114,6 @@
          }
        })
 
-
        .state('app.nuevaActividad', {
          url: "/nuevaActividad",
          views: {
@@ -128,8 +126,6 @@
            }
          }
        })
-
-
 
        .state('app.ajustes', {
          url: "/ajustesProf",
@@ -156,8 +152,6 @@
            }
          }
        })
-
-
        //////////////////////////////ACTIVIDADES DEL PROFESOR//////////////////////////////////
        //////////////////////////////////////////////////////////////////////////////////////
 

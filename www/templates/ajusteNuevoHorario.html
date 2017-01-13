@@ -1,40 +1,50 @@
 <ion-view title="Nuevo grupo" id="ajusteNuevoHorario">
   <ion-content padding="true" class="has-header">
     <div class="list">
-
       <label class="item item-input item-select">
         <div class="input-label">
-          Grupo
+          Clave del grupo
         </div>
-        <select>
-          <option>15701</option>
-          <option selected>1508</option>
-          <option>15702</option>
-          <option>15698</option>
+        <select id="cmb_grupo">
+          <option ng-repeat="item in response1 track by item.nombreM">{{item.nombreM}}</option>
         </select>
       </label>
-
+    </div>
+    <!-- lista con todos los ciclos escolares-->
+    <div class="list" ng-controller="prueba1">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Ciclo escolar
+        </div>
+        <select id="cmb_cicloEscolar">
+          <option>2016-2</option>
+          <option selected>2017-1</option>
+          <option>2017-2</option>
+        </select>
+      </label>
     </div>
     <!--Crear check box (Nombres de todas las materias )-->
 
     <div class="list">
-
       <label class="item item-input item-select">
         <div class="input-label">
           Materia
         </div>
-        <select>
-          <option>LOGICA</option>
-          <option selected>FUNDAMENTOS FISICOS Y TECNOLOGICOS DE LA INFORMATICA</option>
-          <option>MATEMATICA DISCRETA</option>
-          <option>ALGEBRA LINEAL</option>
+        <select id="cmb_materia">
+          <option>Realidad Virtual</option>
+          <option selected>Realidad Aumentada</option>
+          <option>Ingenieria de Software</option>
+          <option>Estructuras de Datos</option>
+          <option>Programacion Orientada a Objetos</option>
         </select>
       </label>
     </div>
     <!--botón siguiente lleva a ajusteHorarioHorarioFinal-->
-    <button class="button button-positive button-block" id ="btn_siguiente" ui-sref="app.ajusteHorarioHora">
+    <button class="button button-positive button-block" id ="btn_siguiente" ng-click="registra()" ui-sref="app.ajusteHorarioHora">
       siguiente
     </button>
 
+
+    <button class="button button-block button-positive" type="submit" ng-click="prueba1()" >Log in</button>
   </ion-content>
 </ion-view>
