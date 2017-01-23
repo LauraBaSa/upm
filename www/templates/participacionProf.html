@@ -9,17 +9,18 @@
     <ion-content padding="true" class="has-header">
         <!--Select para los grupos-->
         <div class="list">
+          <!--Crear check box (Grupos )-->
+          <form ng-controller="consultaGruposCtrl">
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Grupo
-                </div>
-                <select>
-                    <option>15701</option>
-                    <option selected>15789</option>
-                    <option>15893</option>
-                    <option>14589</option>
-                </select>
+              <div class="input-label">
+                Grupo
+              </div>
+              <!--<select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">-->
+              <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
+                <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+              </select>
             </label>
+          </form>
         </div>
         <!--btn_buscar-->
         <button class="button button-positive button-block" id="btn_buscar">Buscar aleatoriamente</button>

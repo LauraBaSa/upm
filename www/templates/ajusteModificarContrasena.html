@@ -1,0 +1,18 @@
+<ion-view title="Modificar contraseña">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <label class="item item-input">
+      <span class="input-label">Nueva contraseña</span>
+      <input required type="text" ng-model="data.passNueva">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">repetir contraseña</span>
+      <input required type="text" ng-model="data.passRepetir">
+    </label>
+    <button class="button button-positive button-block" ng-click="modificar()">
+      Modificar contraseña
+    </button>
+  </ion-content>
+</ion-view>

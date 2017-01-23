@@ -8,18 +8,18 @@
   </ion-nav-bar>
   <ion-content padding="true" class="has-header">
     <div class="list">
-    <!--Crear check box (Grupos )-->
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Grupo
-        </div>
-        <select>
-          <option>15701</option>
-          <option selected>15702</option>
-          <option>14784</option>
-        </select>
-      </label>
-
+      <!--Crear check box (Grupos )-->
+      <form ng-controller="consultaGruposCtrl">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Grupo
+          </div>
+          <!--<select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">-->
+          <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
+            <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+          </select>
+        </label>
+      </form>
     </div>
     <!--boton para ver comentarios -->
     <button class="button button-positive button-block" id="btn_consulta">Ver  comentarios </button>
@@ -39,9 +39,9 @@
           consists of tabs, icons aligned left, within the card-footer.
         </p>
         <p>
-          <a href="#" class="subdued">1 Like</a>
-          <a href="#" class="subdued">19/10/2016</a>
-          <a href="#" class="subdued">13:00 hrs.</a>
+          <a class="subdued">1 Like</a>
+          <a class="subdued">19/10/2016</a>
+          <a class="subdued">13:00 hrs.</a>
         </p>
       </div>
 

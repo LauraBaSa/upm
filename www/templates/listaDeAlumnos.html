@@ -6,33 +6,24 @@
   <ion-content padding="true" class="has-header">
     <div class="list">
       <!--Crear check box (Grupos )-->
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Grupo
-        </div>
-        <select>
-          <option>15701</option>
-          <option selected>15702</option>
-          <option>14784</option>
-        </select>
-      </label>
-
+      <form ng-controller="consultaGruposCtrl">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Grupo
+          </div>
+          <!--<select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">-->
+          <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
+            <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+          </select>
+        </label>
+      </form>
     </div>
-    <div class="list" ng-repeat="item in ListaGrupos">
-
-      <ion-item  detail-push class="item item-divider item-balanced item-text-wrap item-button-right">
-        Grupo: {{item.grupo}} "{{item.materia}}"
-        <button class="button button-balanced " ng-click="mostrar()">
-          <i class="icon ion-ios-arrow-down"> </i>
-        </button>
-      </ion-item>
-
-      <a class="item item-text-wrap detail-push" ng-repeat="item in ListaA track by $index" >
-        <!--{{item.nombres.nombre}} {{item.nombres.apellidoP}} {{item.nombres.apellidoM}}-->
-        {{item.ListaA}}
+    <div class="list" ng-repeat="item in listaA">
+      <a  detail-push class="item">
+        Alumno: {{item.alumno}}
       </a>
+      <!--<a class="item item-divider item-balanced item-text-wrap item-button-right" >{{item.ListaA}}</a>-->
     </div>
-
 
   </ion-content>
 </ion-view>

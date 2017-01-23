@@ -1,4 +1,4 @@
-<ion-view title="Códigos de grupos" id="codigosGrupos">
+<ion-view title="Clave de grupos" id="codigosGrupos">
 
   <!--<ion-nav-bar class="bar-balanced">-->
     <!--<ion-nav-back-button> </ion-nav-back-button>-->
@@ -9,15 +9,12 @@
 
   <ion-content padding="true" class="has-header">
 
-    <div class="list">
+    <div class="list" ng-repeat="item in response" >
       <div class="item item-divider item-balanced">
-        Grupo: 15667
+        {{item.nombreM}}
       </div>
-      <a class="item item-text-wrap" href="#">
-        Materia: Programación Orientada a Objetos
-      </a>
-      <a class="item" href="#">
-        Clave: G12345
+      <a class="item item-text-wrap">
+        claveGrupo: {{item.claveGrupo}}
       </a>
     </div>
   </ion-content>

@@ -72,9 +72,6 @@
            }
          }
        })
-
-
-
        .state('app.cDigosDeGrupos', {
          url: "/codigosGrupos",
          views: {
@@ -311,6 +308,18 @@
          }
        })
 
+       .state('app.ajusteModificarContrasena', {
+         url: "/ajusteModificarContrasena",
+         views: {
+           'appContent' :{
+             templateUrl: "templates/ajusteModificarContrasena.html",
+             controller: "ajusteModificarContrasenaCtrl"
+           },
+           'menuList': {
+             templateUrl : "templates/menuProf.html"
+           }
+         }
+       })
        //////////////////////////////MENU DEL ALUMNO//////////////////////////////////
        //////////////////////////////////////////////////////////////////////////////////////
 
@@ -461,7 +470,18 @@
            }
          }
        })
-
+       .state('app.ajusteModificarContrasenaAlum', {
+         url: "/ajusteModificarContrasenaAlum",
+         views: {
+           'appContent' :{
+             templateUrl: "templates/ajusteModificarContrasenaAlum.html",
+             controller: "ajusteModificarContrasenaCtrl"
+           },
+           'menuList': {
+             templateUrl : "templates/menuAlum.html"
+           }
+         }
+       })
 
        //////////////////////////////MENU DE LOGIN //////////////////////////////////
        //////////////////////////////////////////////////////////////////////////////////////

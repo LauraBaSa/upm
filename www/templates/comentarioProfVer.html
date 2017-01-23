@@ -1,4 +1,4 @@
-<ion-view title="Ver Foros">
+<ion-view title="Foros ">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
@@ -6,39 +6,31 @@
 
     <div class="list">
       <!--Crear check box (Grupos )-->
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Grupo
-        </div>
-        <select>
-          <option>15701</option>
-          <option selected>15702</option>
-          <option>14784</option>
-        </select>
-      </label>
+      <form ng-controller="consultaGruposCtrl">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Grupo
+          </div>
+          <!-- Al seleccionar algun grupo se ejecuta el metodo lista -->
+          <select id="cmb_grupo1" ng-change="lista()" ng-model="itemSeleccionado">
+            <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+          </select>
+        </label>
+      </form>
     </div>
     <!-- inicia card para ver los comentarios-->
-    <div class="list card">
-
+    <div class="list" ng-repeat="item in listaForo" >
+      <div class="item item-divider item-balanced">
+      </div>
+      <div class="item item-text-wrap">
+        requerimiento: {{item.requerimiento}}
+      </div>
       <div class="item">
-        <h2>Morelos Coronado Rodrigo</h2>
+        Fecha de inicio: {{item.fechaInicio}}
       </div>
-
-      <div class="item item-body">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Consectetur consequuntur dolorem, error, et impedit in labore libero maxime,
-          odit placeat quasi quibusdam soluta suscipit ullam voluptatem. Est laudantium quia vitae.
-        </p>
-        <p>
-          <a href="#" class="subdued">1 Like</a>
-          <a href="#" class="subdued">19/10/2016</a>
-          <a href="#" class="subdued">13:00 hrs.</a>
-        </p>
+      <div class="item">
+        Fecha de termino: {{item.fechaTermino}}
       </div>
-
     </div>
-
-
   </ion-content>
 </ion-view>

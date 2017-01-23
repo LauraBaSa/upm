@@ -1,15 +1,10 @@
 <ion-view title="Nuevo grupo" id="ajusteNuevoHorario">
   <ion-content padding="true" class="has-header">
-    <div class="list">
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Clave del grupo
-        </div>
-        <select id="cmb_grupo">
-          <option ng-repeat="item in response1 track by item.nombreM">{{item.nombreM}}</option>
-        </select>
-      </label>
-    </div>
+
+    <label class="item item-input">
+      <span class="input-label">Grupos</span>
+      <input required type="text" placeholder="Ej. MiGrupo1" ng-model="data.grupos">
+    </label>
     <!-- lista con todos los ciclos escolares-->
     <div class="list" ng-controller="prueba1">
       <label class="item item-input item-select">
@@ -28,14 +23,10 @@
     <div class="list">
       <label class="item item-input item-select">
         <div class="input-label">
-          Materia
+          Materias
         </div>
         <select id="cmb_materia">
-          <option>Realidad Virtual</option>
-          <option selected>Realidad Aumentada</option>
-          <option>Ingenieria de Software</option>
-          <option>Estructuras de Datos</option>
-          <option>Programacion Orientada a Objetos</option>
+          <option ng-repeat="item in response1 track by item.nombreM">{{item.nombreM}}</option>
         </select>
       </label>
     </div>
@@ -44,7 +35,5 @@
       siguiente
     </button>
 
-
-    <button class="button button-block button-positive" type="submit" ng-click="prueba1()" >Log in</button>
   </ion-content>
 </ion-view>
