@@ -2,19 +2,16 @@
     <ion-content padding="true" class="has-header">
         <!-- Crear una lista para agregar tod el contenido dentro de ella-->
         <div class="list">
-
+          <form ng-controller="consultaGruposCtrl">
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Grupo
-                </div>
-                <select>
-                    <option>15701</option>
-                    <option selected>1508</option>
-                    <option>15702</option>
-                    <option>15698</option>
-                </select>
+              <div class="input-label">
+                Clave del grupo
+              </div>
+              <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
+                <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+              </select>
             </label>
-
+          </form>
         </div>
 
         <!--  Lista de los puntajes  -->
@@ -37,39 +34,41 @@
         </div>
         <!--check box de los rubros-->
         <div class="list">
-            <label class="item item-input item-select">
-                <div class="input-label">
-                    Rubros
-                </div>
-                <select>
-                    <option>Participación</option>
-                    <option selected>Exámen</option>
-                    <option>Tareas</option>
-                    <option>Prácticas</option>
-                </select>
-            </label>
-        </div>
-      <!--check box de las actividades a las que se le asigna calificacion-->
-      <div class="list">
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Actividad
+          <div class="item item-divider item-balanced">
+            Nueva puntuación
           </div>
-          <select>
-            <option>memorama</option>
-            <option selected>Participacion</option>
-            <option>Código</option>
-            <option>Test</option>
-            <option>Comentarios</option>
-          </select>
-        </label>
-      </div>
-        <!-- Texto para introducir nueva puntuación -->
-        <a class="item" >
+            <label class="item item-input item-select">
+              <div class="input-label">
+                Rubros
+              </div>
+              <select id="cmb_actividad">
+                <option>Participación</option>
+                <option selected>Exámen</option>
+                <option>Tareas</option>
+                <option>Prácticas</option>
+              </select>
+            </label>
+          <!--check box de las actividades a las que se le asigna calificacion-->
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Actividad
+            </div>
+            <select id="cmb_rubros">
+              <option>memorama</option>
+              <option selected>Participacion</option>
+              <option>Código</option>
+              <option>Test</option>
+              <option>Comentarios</option>
+            </select>
+          </label>
+          <a class="item" >
             <!--  nueva puntuación -->
-            <input type="text" id="txt_NuevaPuntuación" name="txt_NuevaPuntuacion" placeholder="Nueva puntuación" >
-        </a>
-        <button class="button button-positive button-block" id="btn_modificar" name="btn_modificar" >Modificar </button>
+            <input type="text" ng-model="data.txt_nuevaPuntuacion" placeholder="Nueva puntuación" ng-model="data.txt_nuevaPuntuacion">
+          </a>
+        </div>
+        <!-- Texto para introducir nueva puntuación -->
+
+        <button class="button button-positive button-block"  ng-click="prueba()" >Modificar </button>
 
     </ion-content>
 </ion-view>

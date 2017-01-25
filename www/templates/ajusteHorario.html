@@ -2,101 +2,72 @@
     <ion-content padding="true" class="has-header">
         <!--Check box con la lista de los grupos-->
         <div class="list">
+          <form ng-controller="consultaGruposCtrl">
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Clave del grupo
-                </div>
-                <select>
-                    <option>15701</option>
-                    <option selected>1508</option>
-                    <option>15702</option>
-                    <option>15698</option>
-                </select>
+              <div class="input-label">
+                Clave del grupo
+              </div>
+              <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
+                <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+              </select>
             </label>
+          </form>
         </div>
         <div class="list">
-            <div class="item item-divider item-balanced">
-                Información del grupo
-            </div>
-            <a class="item" href="#">
-                Clave: G83746<br>
-                Grupo: 15692<br>
-                Materia: POO<br>
-                Hora de inicio: 9:00<br>
-                Hora fin: 10:00<br>
-            </a>
+          <div class="item item-divider item-balanced">
+            Información del grupo
+          </div>
+          <a class="item item-text-wrap" >
+            Clave: G83746 <br>
+            Grupo: 15692<br>
+            Materia: POO<br>
+            Hora de inicio: 9:00<br>
+            Hora fin: 10:00<br>
+          </a>
+          <a class="item item-text-wrap">
+            Clave: G83746<br>
+            Grupo: 15692<br>
+            Materia: POO<br>
+            Hora de inicio: 9:00<br>
+            Hora fin: 10:00<br>
+          </a>
             <div class="item item-divider item-balanced">
                 Datos a modificar
             </div>
+          <form ng-controller="consultaHoraCtrl">
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Hora Inicio clase
-                </div>
-                <select>
-                    <option selected>8:00</option>
-                    <option >9:00</option>
-                    <option>10:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
-                </select>
+              <div class="input-label">
+                Hora Inicio clase
+              </div>
+              <select id="cmb_horaInicio" ng-model="itemSeleccionado"><!--ng-change="lista()"-->
+                <option ng-repeat="item in Lista" >{{item.hora}}</option>
+              </select>
             </label>
+          </form>
+          <form ng-controller="consultaHoraCtrl">
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Hora fin clase
-                </div>
-                <select>
-                    <option selected>8:00</option>
-                    <option >9:00</option>
-                    <option>10:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
-                </select>
+              <div class="input-label">
+                Hora fin clase
+              </div>
+              <select id="cmb_horaTermino" ng-model="itemSeleccionado"><!--ng-change="lista()"-->
+                <option ng-repeat="item in Lista" >{{item.hora}}</option>
+              </select>
             </label>
-
-                <label class="item item-input item-select">
-                    <div class="input-label">
-                        Materia
-                    </div>
-                    <select>
-                        <option>LOGICA</option>
-                        <option selected>FUNDAMENTOS FISICOS Y TECNOLOGICOS DE LA INFORMATICA</option>
-                        <option>MATEMATICA DISCRETA</option>
-                        <option>ALGEBRA LINEAL</option>
-                    </select>
-                </label>
-            <label class="item item-input item-select">
-                <div class="input-label">
-                    Grupo
-                </div>
-                <select>
-                    <option>15701</option>
-                    <option selected>1508</option>
-                    <option>15702</option>
-                    <option>15698</option>
-                </select>
-            </label>
+          </form>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Materia
+            </div>
+            <form ng-controller="consultaMateriaCtrl">
+              <select id="cmb_materia">
+                <option ng-repeat="item in response1 track by item.nombreM">{{item.nombreM}}</option>
+              </select>
+            </form>
+          </label>
         </div>
 
         <!--botón para modificar los datos de la clase-->
-        <button class="button button-positive button-block" id ="btn_modificar">Modificar</button>
+        <button class="button button-positive button-block" id ="btn_modificar" ng-click="prueba()">Modificar</button>
 
     </ion-content>
 </ion-view>

@@ -1,176 +1,35 @@
 {
-  "ListaGrupos": [
+  "Horario": [
     {
-      "grupo": 15698,
-      "materia":"Programación Orientada a objetos"
+      "hora": "8:00"
     },{
-      "grupo": 189754,
-      "materia":"Logica"
+      "hora": "9:00"
     },{
-      "grupo": 18795,
-      "materia":"Fundamentos de programación"
+      "hora": "10:00"
+    },{
+      "hora": "11:00"
+    },{
+      "hora": "12:00"
+    },{
+      "hora": "13:00"
+    },{
+      "hora": "14:00"
+    },{
+      "hora": "15:00"
+    },{
+      "hora": "16:00"
+    },{
+      "hora": "17:00"
+    },{
+      "hora": "18:00"
+    },{
+      "hora": "19:00"
+    },{
+      "hora": "20:00"
+    },{
+      "hora": "21:00"
+    },{
+      "hora": "22:00"
     }
-  ],
-  "ListaAlumnos":[
-    {
-      "nombre": "ana",
-      "apellidoP": "bautista",
-      "apellidoM": "Sandoval"
-    },{
-      "nombre": "ana",
-      "apellidoP": "Sandoval",
-      "apellidoM": "Sandoval"
-    },{
-      "nombre": "Laura",
-      "apellidoP": "Morelos",
-      "apellidoM": "Sandoval"
-    },{
-      "nombre": "Lola",
-      "apellidoP": "Garcia",
-      "apellidoM": "Sandoval"
-    },{
-      "nombre": "Lorena",
-      "apellidoP": "Lopez",
-      "apellidoM": "Lozano"
-    },{
-      "nombre": "Anita",
-      "apellidoP": "Aniceto",
-      "apellidoM": "Altamirano"
-    },{
-      "nombre": "Brenda",
-      "apellidoP": "bolaños",
-      "apellidoM": "Britos"
-    },{
-      "nombre": "Carmela",
-      "apellidoP": "Carmona",
-      "apellidoM": "Coraza"
-    },{
-      "nombre": "Diana",
-      "apellidoP": "Dominguez",
-      "apellidoM": "Duela"
-    },{
-      "nombre": "Erick",
-      "apellidoP": "Eriza",
-      "apellidoM": "El"
-    },{
-      "nombre": "Felipe",
-      "apellidoP": "Fernandez",
-      "apellidoM": "Figueroa"
-    },{
-      "nombre": "Gabriela",
-      "apellidoP": "Garcia",
-      "apellidoM": "Gutierrez"
-    }
-  ],
-  "usuarios": [
-    {
-      "nombre": "Robert",
-      "apellidos": "López Smith",
-      "edad": 65,
-      "telefono": "6668889994",
-      "en_activo": true,
-      "foto":"foto1.jpg",
-      "uso": 3,
-      "id": 0
-    },{
-      "nombre": "Carlos",
-      "apellidos": "Fernández Soto",
-      "edad": 62,
-      "telefono": "5556777744",
-      "en_activo": false,
-      "foto":"foto2.jpg",
-      "uso": 4,
-      "id": 1
-    },{
-      "nombre": "Tom",
-      "apellidos": "Stone",
-      "edad": 46,
-      "telefono": "543332233",
-      "en_activo": true,
-      "foto":"foto3.jpg",
-      "uso": 1,
-      "id": 2
-    },{
-      "nombre": "Anna",
-      "apellidos": "Smith",
-      "edad": 47,
-      "telefono": "876635445",
-      "en_activo": true,
-      "foto":"foto4.jpg",
-      "uso": 2,
-      "id": 3
-    }
-  ],
-  "Lista": [
-    {
-      "grupo": 15698,
-      "materia":"Programación Orientada a objetos",
-      "nombres":[
-        {
-          "nombre": "Brenda",
-          "apellidoP": "bolaños",
-          "apellidoM": "Britos"
-        },{
-          "nombre": "Carmela",
-          "apellidoP": "Carmona",
-          "apellidoM": "Coraza"
-        },{
-          "nombre": "Diana",
-          "apellidoP": "Dominguez",
-          "apellidoM": "Duela"
-        },{
-          "nombre": "Erick",
-          "apellidoP": "Eriza",
-          "apellidoM": "El"
-        },{
-          "nombre": "Felipe",
-          "apellidoP": "Fernandez",
-          "apellidoM": "Figueroa"
-        },{
-          "nombre": "Gabriela",
-          "apellidoP": "Garcia",
-          "apellidoM": "Gutierrez"
-        }
-      ]
-    },{
-      "grupo": 189754,
-      "materia":"Logica",
-      "nombres":[
-        {
-          "nombre": "ana",
-          "apellidoP": "bautista",
-          "apellidoM": "Sandoval"
-        },{
-          "nombre": "ana Laura",
-          "apellidoP": "Sandoval",
-          "apellidoM": "Sandoval"
-        },{
-          "nombre": "Laura",
-          "apellidoP": "Morelos",
-          "apellidoM": "Sandoval"
-        }
-      ]
-    },{
-      "grupo": 18795,
-      "materia":"Fundamentos de programación",
-      "nombres":[
-        {
-          "nombre": "Lola",
-          "apellidoP": "Garcia",
-          "apellidoM": "Sandoval"
-        },{
-          "nombre": "Lorena",
-          "apellidoP": "Lopez",
-          "apellidoM": "Lozano"
-        },{
-          "nombre": "Anita",
-          "apellidoP": "Aniceto",
-          "apellidoM": "Altamirano"
-        }
-      ]
-    }
-  ],
-  "Grupos" :[{
-
-  }]
+  ]
 }

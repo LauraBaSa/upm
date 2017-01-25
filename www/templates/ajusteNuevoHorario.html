@@ -21,14 +21,17 @@
     <!--Crear check box (Nombres de todas las materias )-->
 
     <div class="list">
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Materias
-        </div>
-        <select id="cmb_materia">
-          <option ng-repeat="item in response1 track by item.nombreM">{{item.nombreM}}</option>
-        </select>
-      </label>
+      <form ng-controller="consultaMateriaCtrl">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Materias
+          </div>
+          <select id="cmb_materia">
+            <option ng-repeat="item in response1 track by item.nombreM">{{item.nombreM}}</option>
+          </select>
+        </label>
+      </form>
+
     </div>
     <!--botón siguiente lleva a ajusteHorarioHorarioFinal-->
     <button class="button button-positive button-block" id ="btn_siguiente" ng-click="registra()" ui-sref="app.ajusteHorarioHora">
