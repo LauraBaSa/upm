@@ -9,12 +9,14 @@
        //////////////////////////////PAGINA DE LOGIN//////////////////////////////////
        //////////////////////////////////////////////////////////////////////////////////////
 
+       //
        .state('app', {
          url: "/app",
          abstract: true,
          templateUrl: "templates/menu.html",
          controller: 'AppCtrl'
        })
+
        .state('app.playlists', {
          url: "/playlists",
          views: {
@@ -31,14 +33,24 @@
 
        //////////////////////////////PÁGINAS DE INICIO//////////////////////////////////
        //////////////////////////////////////////////////////////////////////////////////////
+       // sólo se comenta esta función ya que en las siguientes funciones es la misma estructura.
+       // ruta para la página de inicio del profesor
+       //url: indica la url que aparecerá en el navegador, pero omo será una app móvil, no se verá, pero en fase de programación
+       //es muy util ya que las pruebas son en navegador web
+
        .state('app.inicio', {
          url: "/inicioProf",
+         //views es la interfaz que se abrirá al ejecutar esta función
          views: {
            'appContent' :{
+             //templatesUrl: es la ruta que se abrirá, hay que tener en cuenta que el archivo .html debe estar dentro de la carpeta templates
              templateUrl: "templates/inicio.html",
+             //es el controlador que se ejecuta por defecto en esta vista, el controlador y su programacion está dentro de www/js/controllers.js
              controller:'inicioCtrl'
            },
+           //aqui se encuentra el menú que se mostrará
            'menuList': {
+             //dependiendo de la vista es el menú que se abrirá
              templateUrl : "templates/menuProf.html"
            }
          }
@@ -497,42 +509,6 @@
        })
 
 
-
-       .state('app.search', {
-         url: "/search",
-         views: {
-           'appContent' :{
-             templateUrl: "templates/search.html"
-           },
-           'menuList': {
-             templateUrl : "templates/menuSearch.html"
-           }
-         }
-       })
-
-       .state('app.browse', {
-         url: "/browse",
-         views: {
-           'appContent' :{
-             templateUrl: "templates/browse.html"
-           },
-           'menuList': {
-             templateUrl : "templates/menuBrowse.html"
-           }
-         }
-       })
-
-
-
-       .state('app.single', {
-         url: "/playlists/:playlistId",
-         views: {
-           'appContent' :{
-             templateUrl: "templates/playlist.html",
-             controller: 'PlaylistCtrl'
-           }
-         }
-       })
 
 
      // if none of the above states are matched, use this as the fallback

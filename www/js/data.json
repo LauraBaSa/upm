@@ -1,9 +1,9 @@
 {
   "Horario": [
     {
-      "hora": "8:00"
+      "hora": "08:00"
     },{
-      "hora": "9:00"
+      "hora": "09:00"
     },{
       "hora": "10:00"
     },{
@@ -30,6 +30,44 @@
       "hora": "21:00"
     },{
       "hora": "22:00"
+    }
+  ],
+  "Meses":[
+    {
+      "mes":"ENERO"
+    },
+    {
+      "mes":"FEBRERO"
+    },
+    {
+      "mes":"MARZO"
+    },
+    {
+      "mes":"ABRIL"
+    },
+    {
+      "mes":"MAYO"
+    },
+    {
+      "mes":"JUNIO"
+    },
+    {
+      "mes":"JULIO"
+    },
+    {
+      "mes":"AGOSTO"
+    },
+    {
+      "mes":"SEPTIEMBRE"
+    },
+    {
+      "mes":"OCTUBRE"
+    },
+    {
+      "mes":"NOVIEMBRE"
+    },
+    {
+      "mes":"DICIEMBRE"
     }
   ]
 }

@@ -1,34 +1,15 @@
 <ion-view title="ACOMODAR CÓDIGO" id="codigoProf">
     <ion-content padding="true" class="has-header">
-
-        <!--Select para los grupos-->
-        <div class="list">
-          <!--Crear check box (Grupos )-->
-          <form ng-controller="consultaGruposCtrl">
-            <label class="item item-input item-select">
-              <div class="input-label">
-                Grupo
-              </div>
-              <!--<select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">-->
-              <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
-                <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
-              </select>
-            </label>
-          </form>
-        </div>
         <!--Select para los elegir el código-->
         <div class="list">
-            <label class="item item-input item-select">
-                <div class="input-label">
-                    Elegir código
-                </div>
-                <select>
-                    <option selected >Código 1</option>
-                    <option >Código 2</option>
-                    <option>Código 3</option>
-                    <option>Código 4</option>
-                </select>
-            </label>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Elegir código
+            </div>
+            <select>
+              <option selected >Código 1</option>
+            </select>
+          </label>
         </div>
 
         <!-- Mostrar el código seleccionado por el combo box-->
@@ -36,19 +17,19 @@
             <div class="item item-divider item-balanced">
                 Código1
             </div>
-            <a class="item" href="#">
+            <a class="item" >
 
                 public class HelloWorld {
             </a>
-            <a class="item " href="#">
+            <a class="item " >
 
                 public static void main(String[] args) {
             </a>
-            <a class="item" href="#">
+            <a class="item" >
 
                 System.out.println("Hello, World");
             </a>
-            <a class="item" href="#">
+            <a class="item" >
                 }
                 }
             </a>

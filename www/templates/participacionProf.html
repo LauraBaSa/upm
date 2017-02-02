@@ -7,38 +7,36 @@
         </ion-nav-buttons>
     </ion-nav-bar>
     <ion-content padding="true" class="has-header">
-        <!--Select para los grupos-->
-        <div class="list">
-          <!--Crear check box (Grupos )-->
-          <form ng-controller="consultaGruposCtrl">
-            <label class="item item-input item-select">
-              <div class="input-label">
-                Grupo
-              </div>
-              <!--<select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">-->
-              <select id="cmb_grupo" ng-change="lista()" ng-model="itemSeleccionado">
-                <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
-              </select>
-            </label>
-          </form>
-        </div>
-        <!--btn_buscar-->
-        <button class="button button-positive button-block" id="btn_buscar">Buscar aleatoriamente</button>
+      <!--Select para los grupos-->
+      <div class="list">
+        <form ng-controller="consultaGruposCtrl">
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Grupo
+            </div>
+            <!--Crear check box (Grupos )-->
+            <select id="cmb_grupo" ng-change="listaAsistencia()" ng-model="itemSeleccionado">
+              <option ng-repeat="item in optionGrupo track by item.claveGrupo" >{{item.claveGrupo}}   </option>
+            </select>
+          </label>
+        </form>
+      </div>
+        <!--boton para buscar-->
+        <button class="button button-positive button-block" ng-click="buscar()">Buscar aleatoriamente</button>
         <!--Nombre del alumno que participará-->
-        <h3 align="center"> Barrera Ocampo Iván </h3>
 
-        <!--btn_participa btn_noParticipa-->
-
+        <h3 align="center" ng-repeat=" item in nombreAlumno" > {{item.nombreAlumno}} </h3>
+        <!--btn_participa btn_Participa-->
         <div class="button-bar">
-          <button class="button button-positive button-block" id="btn_participo">Participó</button>
+          <button class="button button-positive button-block" ng-click="participar()">Participó</button>
         </div>
 
-        <div class="list">
+        <div class="list" ng-repeat="item in listaAsis">
           <div class="item item-divider item-balanced">
                 Alumnos que asistieron
           </div>
           <a class="item">
-                Ana Laura Bautista Sandoval
+            {{item.alumno}}
           </a>
         </div>
 

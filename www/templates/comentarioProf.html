@@ -18,39 +18,27 @@
 
         <!--Area de texto para ingresar el tema a comentar por el profesor-->
         <label class="item item-input">
-            <textarea placeholder="ingresar el tema a comentar..." id="txt_tema"></textarea>
+            <textarea placeholder="ingresar el tema a comentar..." ng-model="data.tema"></textarea>
         </label><br><br>
         <!--Hora de el termino de lops comentarios-->
         <div class="list">
+          <form ng-controller="consultaHoraCtrl">
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Hora de termino
-                </div>
-
-                <select>
-                    <option>8:00</option>
-                    <option selected>9:00</option>
-                    <option>10:00</option>
-                    <option>11:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                </select>
+              <div class="input-label">
+                Hora limite para comentar
+              </div>
+              <select id="cmb_horaTermino" ng-model="itemSeleccionado"><!--ng-change="lista()"-->
+                <option ng-repeat="item in Lista" >{{item.hora}}</option>
+              </select>
             </label>
+          </form>
         </div>
       <!--fECHA DE TERMINO DE LOS COMENTARIOS-->
       <label class="item item-input">
         <span class="input-label">Fecha de termino</span>
-        <input type="text" placeholder="DD/MM/AAAA" >
+        <input type="text" placeholder="AAAA/MM/DD" ng-model="data.fecha" >
       </label>
         <!--btn_participa btn_noParticipa-->
-            <button class="button button-positive  button-block" id="btn_iniciar">Iniciar actividad</button>
+            <button class="button button-positive  button-block" ng-click="iniciarActividad()">Iniciar actividad</button>
     </ion-content>
 </ion-view>
